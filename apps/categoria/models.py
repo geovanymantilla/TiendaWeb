@@ -9,3 +9,7 @@ class categoria(models.Model):
 
     class Meta:
         db_table = "categoria"
+
+    def __str__(self):
+        return self.descripcion
+
