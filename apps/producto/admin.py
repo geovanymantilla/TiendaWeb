@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import producto
+from .models import categoria
+from .models import marca
 # Register your models here.
 
 class listarProducto(admin.ModelAdmin):
@@ -8,3 +10,7 @@ class listarProducto(admin.ModelAdmin):
     ]
 
 admin.site.register(producto, listarProducto)
+
+admin.site.register(marca)
+
+admin.site.register(categoria)

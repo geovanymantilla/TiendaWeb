@@ -1,9 +1,29 @@
 from django.db import models
 from decimal import Decimal
-from apps.marca.models import marca
-from apps.categoria.models import categoria
 
 # Create your models here.
+
+class categoria(models.Model):
+    id = models.AutoField(primary_key=True)
+    descripcion = models.CharField(max_length=100,null=True)
+    estado = models.CharField(max_length=1,null=True)
+
+    class Meta:
+        db_table = "categoria"
+
+    def __str__(self):
+        return self.descripcion
+
+class marca(models.Model):
+    id = models.AutoField(primary_key=True)
+    nombre =models.CharField(max_length=100, null=False)
+    descripcion = models.CharField(max_length=500, null=False)
+    
+    class Meta:
+        db_table = "marca"
+
+    def __str__(self):
+        return self.nombre
 
 class producto(models.Model):
     id = models.AutoField(primary_key=True)
@@ -19,3 +39,4 @@ class producto(models.Model):
     
     class Meta:
         db_table = "producto"
+
