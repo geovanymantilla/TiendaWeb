@@ -34,6 +34,7 @@ class producto(models.Model):
     valor = models.DecimalField(max_digits=10, decimal_places=2)
     palabras_clave = models.CharField(max_length=100,null=True)
     estado = models.CharField(max_length=1,null=True)
+    imagen = models.ImageField()
     categoria = models.ForeignKey(categoria, on_delete=models.RESTRICT,null=False,blank=False,related_name="FK_productoCategoria")
     marca = models.ForeignKey(marca, on_delete=models.RESTRICT,null=False,blank=False,related_name="FK_productoCategoria")
     
