@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.empresa',
-    'apps.producto'
+    # 'empresa',
+    'producto'
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'tiendaWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'empresa',
+        'NAME': 'tiendaWeb',
         'USER': 'root',
         'PASSWORD': '',
         'HOST':'',
