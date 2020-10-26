@@ -3,6 +3,9 @@
 {% load static %}
 
 {% block content %}
+
+
+
 	<div class="container">
 	<div class="row">
 
@@ -21,79 +24,29 @@
 			
 
 		</div>
-		<div class="col-sm-10">
+		<div class="col-sm-10">  
 			<div class="row" id="galeria2">
 				<div class="col-sm-12" style="text-align: center;"><h2><b>Listado de Productos</b></h2> </div>
 				<div class=" col-sm-12 searchbar">
 					<input class="search_input" type="text" name="" placeholder="Busqueda de productos..." style="width: 100%; border-radius: 5px;">
 					<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-				</div>
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://s3.amazonaws.com/mercado-ideas/wp-content/uploads/sites/2/2019/06/04175926/huawei-mate-20-lite-64gb-dual-sim-black.jpg" alt="Cinque Terre" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
+                </div>
+                
+                {% for producto in productos %}
+
+
+
 
 				<div class="gallery rounded">
 					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://www.profesionalreview.com/wp-content/uploads/2020/01/Honor-View-20.jpg" alt="Forest" width="600" height="400">
+						<img src="{{producto.imagen.url}}" alt="Cinque Terre" style="height: 210px">
 					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
+                    <div class="desc"><h5>{{producto.nombre}}</h5></div>
+                    <div class="desc"><h6>{{producto.valor}}</h6></div>
 
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQshWs95uaj6B6ZEE6iGJA55kJaZIWgyz0eNQ&usqp=CAU" alt="Northern Lights" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
 				</div>
-
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://www.infotechnology.com/export/sites/revistait/img/2019/07/17/17_07_19_xiaomi_mi_9.jpg_250762186.jpg" alt="Mountains" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://s3.amazonaws.com/mercado-ideas/wp-content/uploads/sites/2/2019/06/04175926/huawei-mate-20-lite-64gb-dual-sim-black.jpg" alt="Cinque Terre" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
-
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://www.profesionalreview.com/wp-content/uploads/2020/01/Honor-View-20.jpg" alt="Forest" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
-
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQshWs95uaj6B6ZEE6iGJA55kJaZIWgyz0eNQ&usqp=CAU" alt="Northern Lights" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
-
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://www.infotechnology.com/export/sites/revistait/img/2019/07/17/17_07_19_xiaomi_mi_9.jpg_250762186.jpg" alt="Mountains" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://www.infotechnology.com/export/sites/revistait/img/2019/07/17/17_07_19_xiaomi_mi_9.jpg_250762186.jpg" alt="Mountains" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
-				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
-						<img src="https://www.infotechnology.com/export/sites/revistait/img/2019/07/17/17_07_19_xiaomi_mi_9.jpg_250762186.jpg" alt="Mountains" width="600" height="400">
-					</a>
-					<div class="desc">Add a description of the image here</div>
-				</div>
+                {% endfor %}
+				
 				<br>
 				<div class="col-sm-12 text-center">
 					<a class="btn btn-info center-block" href="./html/productos.html" role="button">Ver mas productos</a>

@@ -34,7 +34,7 @@ class producto(models.Model):
     valor = models.DecimalField(max_digits=10, decimal_places=2)
     palabras_clave = models.CharField(max_length=100,null=True)
     estado = models.CharField(max_length=1,null=True)
-    imagen = models.ImageField()
+    imagen = models.ImageField(upload_to ='producto')
     categoria = models.ForeignKey(categoria, on_delete=models.RESTRICT,null=False,blank=False,related_name="FK_productoCategoria")
     marca = models.ForeignKey(marca, on_delete=models.RESTRICT,null=False,blank=False,related_name="FK_productoCategoria")
     
@@ -47,9 +47,13 @@ class empresa(models.Model):
     quienes_somos = models.CharField(max_length=500, null=True)
     email_contacto = models.CharField(max_length=50, null=True)
     direccion = models.CharField(max_length=200, null=True)
-    telefono_contacto = models.CharField(max_length=20, null=True)
+    telefono_contacto = models.CharField(max_length=30, null=True)
+    twitter = models.CharField(max_length=100, null=True)
     facebook = models.CharField(max_length=100, null=True)
     instagram = models.CharField(max_length=100, null=True)
 
     class Meta:
         db_table = "empresa"
+
+    def __str__(self):
+        return self.nombre    
