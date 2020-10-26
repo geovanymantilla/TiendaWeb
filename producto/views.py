@@ -27,5 +27,13 @@ def Categoria(request, categoria_id):
     listadoCategoria= categoria.objects.all()
     return render (request, "producto/categoria.html", {"listadoCategoria": listadoCategoria, "categorias" : categorias , "productos": productos ,"empresas" : empresas , "marcas": marcas})
 
+def Marca(request, marca_id):
+    marcas = marca.objects.get(id=marca_id)
+    productos = producto.objects.filter(marca=marcas)
+    categorias = categoria.objects.all()
+    empresas = empresa.objects.all()
+    listadoMarca= marca.objects.all()
+    return render (request, "producto/marca.html", {"listadoMarca": listadoMarca, "categorias" : categorias , "productos": productos,"empresas" : empresas , "marcas": marcas})
+
     
 

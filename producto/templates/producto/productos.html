@@ -26,7 +26,7 @@
 				<ul>
 					{% for marca in marcas %}
 						
-					<li><a href="#">{{marca.nombre}}</a></li>
+					<li><a href="{% url 'marca' marca.id%}">{{marca.nombre}}</a></li>
 					{% endfor %}
 				</ul>
 
