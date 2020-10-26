@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	{% load static %}
+	{% for empresa in empresas %}
 	<title>Inicio</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +15,8 @@
 </head>
 <body>
 	<nav class="" id="nav">
-		<h2> <img  id="logo" src="https://eos-gnss.com/wp-content/uploads/2018/04/iOS.png" width="200px" height="150px" alt="logo"> COVID-19 
+		<h2> <a href="/"><img  id="logo" src="https://eos-gnss.com/wp-content/uploads/2018/04/iOS.png" height="100px" alt="logo"> </a>
+			{{empresa.nombre}} 
 		</h2>
 	</nav>
 
@@ -56,20 +59,23 @@
     
     {% endblock %}
 
-
+     
 
     
 	<div class="row" id="footer" >
-		<div class="col-sm-6">
+		
+
+		<div class="col-sm-6 pt-3">
 			<h4>Informacion de Contacto</h4>
-			<h5>Email:androidcell@iphone.com</h5>			
-			<h5>Telefonos de contacto: 3213686166 - 3012740937</h5>
-			
+			<h5>Email: {{empresa.email_contacto}}</h5>			
+			<h5>Telefonos de contacto: {{empresa.telefono_contacto}}</h5>
 		</div>
 		<div class="col-sm-6 " style="text-align: right;">
-			<a target="_blank" title="facebook" href="https://www.facebook.com/"><img src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202110facebooklogosocialsocialmedia-115707_115594.png" alt="Facebook" /></a>
-			<a target="_blank" title="twitter" href="https://twitter.com/?lang=es"><img src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-icono-de-twitter-logo-by-vexels.png" alt="Twitter"  /> </a>
-			<a  target="_blank"title="Instagram" href="https://www.instagram.com/?hl=es-la"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1200px-Instagram-Icon.png" alt="Instagram" /></a>
+			<a target="_blank" href="{{empresa.facebook}}"> <img src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202110facebooklogosocialsocialmedia-115707_115594.png" alt="Facebook" /></a>
+			<a target="_blank" title="twitter" href="{{empresa.twitter}}"><img src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-icono-de-twitter-logo-by-vexels.png" alt="Twitter"  /> </a>
+			<a  target="_blank"title="Instagram" href="{{empresa.instagram}}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1200px-Instagram-Icon.png" alt="Instagram" /></a>
+
+			{% endfor %}
 			<br>
 
 			<!-- <button type="button" class="btn btn-info">Contactanos</button> -->
@@ -126,19 +132,19 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-3">
           <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="form34" class="form-control validate">
+          <input type="text" required id="form34" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form34">Nombre</label>
         </div>
 
         <div class="md-form mb-3">
           <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="form29" class="form-control validate">
+          <input type="email" required id="form29" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form29">email</label>
         </div>        
 
         <div class="md-form">
           <i class="fas fa-pencil prefix grey-text"></i>
-          <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+          <textarea type="text" required id="form8" class="md-textarea form-control" rows="4"></textarea>
           <label data-error="wrong" data-success="right" for="form8">Your message</label>
         </div>
 
