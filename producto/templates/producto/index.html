@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block titulo %}
+ Home
+{% endblock %}
+
 {% block content %}
 
 {% for empresa in empresas %}
@@ -27,8 +31,10 @@
 					<a target="_blank" href="{% url 'detalleProducto' producto.idCurso %}">
 						<img src="{{producto.imagen.url}}"  width="600" height="400">
 					
-					<div class="desc">{{producto.nombre}}</div>
-					<div>{{producto.valor}}</div>
+					<div class="desc">
+						<h5>{{producto.nombre}}</h5>
+					<h6>${{producto.valor}}</h6>
+				</div>
 				</a>
 				</div>
 				{% endfor %}
