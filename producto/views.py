@@ -34,4 +34,6 @@ def Marca(request, marca_id):
 def DetalleProducto(request, idCurso):
     productos = producto.objects.get(idCurso=idCurso)
     empresas = empresa.objects.all()
-    return render(request, "producto/detalle.html", {"empresas": empresas, "productos": productos} )
+    categorias = categoria.objects.all()
+    marcas = marca.objects.all()
+    return render(request, "producto/detalle.html", {"empresas": empresas, "productos": productos, "marcas": marcas, "categorias" : categorias} )

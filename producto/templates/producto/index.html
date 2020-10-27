@@ -24,11 +24,12 @@
 				{% for producto in productos %}
 
 				<div class="gallery">
-					<a target="_blank" href="#" data-toggle="modal" data-target="#myModal">
-						<img src="{{producto.imagen.url}}" alt="Cinque Terre" width="600" height="400">
-					</a>
+					<a target="_blank" href="{% url 'detalleProducto' producto.idCurso %}">
+						<img src="{{producto.imagen.url}}"  width="600" height="400">
+					
 					<div class="desc">{{producto.nombre}}</div>
 					<div>{{producto.valor}}</div>
+				</a>
 				</div>
 				{% endfor %}
 
