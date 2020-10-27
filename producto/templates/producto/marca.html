@@ -42,11 +42,29 @@
 		</div>
 		<div class="col-sm-10">  
 			<div class="row" id="galeria2">
-				<div class="col-sm-12" style="text-align: center;"><h2><b>Listado de {{marca.nombre}}</b></h2> </div>
-				<div class=" col-sm-12 searchbar pb-3">
+				<div class="col-sm-12" style="text-align: center;"><h2><b>Listado de {{marcas.nombre}}</b></h2> </div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 search pb-4">
+							<form method="get">
+								<div class="custom-search-input">
+									<div class="input-group col-md-12">
+										 <input type="text" class="form-control" placeholder="Buscar.." name="buscar">
+										 <span class="input-group-list">
+											 <i class="icon icon-search">
+												 <button type="submit" class="btn btn-success">Buscar</button>
+											 </i>
+										 </span>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- <div class=" col-sm-12 searchbar pb-3">
 					<input class="search_input" type="text" name="" placeholder="Busqueda de productos..." style="width: 100%; border-radius: 5px;">
 					<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-                </div>
+                </div> -->
                 
                 {% for producto in productos %}
 
@@ -65,7 +83,7 @@
 				
 				<br>
 				<div class="col-sm-12 text-center">
-					<a class="btn btn-info center-block" href="./html/productos.html" role="button">Ver mas productos</a>
+					<a class="btn btn-info center-block" href="/productos" role="button">Ver mas productos</a>
 					
 				</div>
 

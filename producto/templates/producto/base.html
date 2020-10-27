@@ -11,17 +11,34 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="{% static 'producto/css/style.css' %}">
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static 'producto/css/style.css' %}">
 	<title></title>
 
 </head>
 <body>
-	<nav class="" id="nav">
+	<!-- <nav class="navbar navbar-light bg-light justify-content-between" id="nav">
 		<h2> <a href="/"><img  id="logo" src="https://eos-gnss.com/wp-content/uploads/2018/04/iOS.png" height="100px" alt="logo"> </a>
 			{{empresa.nombre}} 
-		</h2>
-	</nav>
+			<form class="form-inline">
+			
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+			  </form>
+	</nav> -->
+	<nav  class="navbar navbar-expand-sm" style="height: 105px;" id="hea">
+        
+        
+        <a class="navbar-bran" href="/">
+            <img title=""  style="height: 90px;"  src="https://eos-gnss.com/wp-content/uploads/2018/04/iOS.png" />
+		</a>
+		<h3>{{empresa.nombre}} </h3>
+        
+        
+    
+        
+       
+        </nav>
 
 	<div id="menu">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -83,6 +100,8 @@
 
 			<!-- <button type="button" class="btn btn-info">Contactanos</button> -->
 			<a href="" class="btn btn-info btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Contactanos</a>
+			<a href="/admin" class="btn btn-info btn-rounded mb-4">Inicio Sesion</a>
+
 		</div>
 		<div class="col  text-center" style="margin-bottom:0" id="derechos">
 			<h5>2020 © All Rights Reserved. Desarrollado por DevSystem</h5> 
