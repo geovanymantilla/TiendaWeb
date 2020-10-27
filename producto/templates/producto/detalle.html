@@ -1,0 +1,52 @@
+{% extends 'producto/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="container">
+	<div class="row">
+
+		<div class="col-sm-2 pt-3">
+			<div class="row " id="category">
+				
+				<h4><b>Categorias</b></h4>
+				<ul>
+					<li><a href="#">Categoria 1</a></li>
+					<li><a href="#">Categoria 2</a></li>
+					<li><a href="#">Categoria 3</a></li>
+					<li><a href="#">Categoria 4</a></li>
+				</ul>
+				
+			</div>
+			
+
+		</div>
+		<div class="col-sm-10 pt-3">
+			<div class="row">
+				<div class="col-sm-12"><h2><b>Detalles del {{productos.nombre}}</b></h2> </div>
+				
+				<div class="col-sm-6" style="float: left;">
+					<img src="{{productos.imagen.url}}" alt="Cinque Terre" width="400" height="400">
+				</div>
+				<div class="col-sm-3" style="float: left;">
+					<h3>{{productos.nombre}}</h3>
+
+					<br><h5>{{productos.categoria}}</h5>
+					<h4>{{productos.valor}}</h4>
+					<p>{{productos.descripcion_corta}}</p>
+				</div>
+				<div>
+					<p class="text-justify">{{productos.detalle}}</p>
+				</div>
+				<br><br>
+			</div>
+
+			
+		</div>
+	</div>
+	</div>
+
+{% endblock %}

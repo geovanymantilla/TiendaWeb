@@ -26,12 +26,12 @@ class marca(models.Model):
         return self.nombre
 
 class producto(models.Model):
-    id = models.AutoField(primary_key=True)
+    idCurso = models.AutoField(primary_key=True)
     referencia = models.CharField(max_length=20,null=True)
     nombre = models.CharField(max_length=100,null=True)
     descripcion_corta = models.CharField(max_length=250,null=True)
     detalle = models.TextField()
-    valor = models.DecimalField(max_digits=10, decimal_places=2)
+    valor = models.IntegerField(default=0)
     palabras_clave = models.CharField(max_length=100,null=True)
     estado = models.CharField(max_length=1,null=True)
     imagen = models.ImageField(upload_to ='producto')
@@ -40,6 +40,9 @@ class producto(models.Model):
     
     class Meta:
         db_table = "producto"
+
+    def __str__(self):
+        return self.nombre     
 
 class empresa(models.Model):
     id = models.AutoField(primary_key=True)
