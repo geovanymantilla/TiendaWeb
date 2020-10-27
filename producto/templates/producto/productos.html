@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block titulo %}
+ Productos
+{% endblock %}
+
 {% block content %}
 
 
@@ -51,7 +55,7 @@
 
 
 				<div class="gallery rounded">
-					<a target="_blank" href="./detalleProducto.html" >
+					<a target="_blank" href="{% url 'detalleProducto' producto.idCurso %}" >
 						<img src="{{producto.imagen.url}}" alt="Cinque Terre" style="color:black; max-height: 190px; max-width: 190px;">
 					
                     <div class="desc"><h5>{{producto.nombre}}</h5>

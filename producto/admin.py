@@ -7,7 +7,7 @@ from .models import empresa
 
 class listarProducto(admin.ModelAdmin):
     list_display= [
-        "id", "referencia", "nombre","valor","estado", "categoria","marca"
+        "idCurso", "referencia", "nombre","valor","estado", "categoria","marca"
     ]
 
 admin.site.register(producto, listarProducto)

@@ -8,10 +8,6 @@ def Inicio(request):
     empresas = empresa.objects.all()
     return render(request, "producto/index.html", {"empresas" : empresas , "productos" : productos})
 
-# def empresas(request):
-#     empresas = empresa.objects.all()
-#     return render(request, "producto/base.html", {"empresas" : empresas})    
-
 def Producto(request):
     productos = producto.objects.all()
     empresas = empresa.objects.all()
@@ -35,5 +31,7 @@ def Marca(request, marca_id):
     listadoMarca= marca.objects.all()
     return render (request, "producto/marca.html", {"listadoMarca": listadoMarca, "categorias" : categorias , "productos": productos,"empresas" : empresas , "marcas": marcas})
 
-    
-
+def DetalleProducto(request, idCurso):
+    productos = producto.objects.get(idCurso=idCurso)
+    empresas = empresa.objects.all()
+    return render(request, "producto/detalle.html", {"empresas": empresas, "productos": productos} )
